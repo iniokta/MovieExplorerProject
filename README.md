@@ -17,10 +17,6 @@ Movie Explorer adalah aplikasi mobile berbasis React Native yang menampilkan inf
 - 🎭 **Genre Film** - Kategori genre setiap film
 - 📱 **Responsive UI** - Antarmuka yang smooth dan user-friendly
 
-## 📸 Screenshots
-```
-[Tambahkan screenshot aplikasi Anda di sini]
-```
 
 ## 🛠️ Teknologi yang Digunakan
 
@@ -45,7 +41,7 @@ Sebelum menjalankan project, pastikan Anda sudah menginstall:
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/username/movie-explorer.git
+https://github.com/iniokta/MovieExplorerProject.git
 cd movie-explorer
 ```
 
@@ -207,8 +203,10 @@ Project ini dibuat untuk tujuan pembelajaran dan bersifat open source.
 
 ## 👤 Author
 
-**Nama Anda**
-- GitHub: [@username](https://github.com/username)
+-Oktaria rahmadani 23312172
+-nabila aulia rahmadani
+
+- GitHub: [@username](https://github.com/iniokta/MovieExplorerProject.git)
 - Email: email@example.com
 
 ## 🙏 Acknowledgments
@@ -221,15 +219,9 @@ Project ini dibuat untuk tujuan pembelajaran dan bersifat open source.
 
 Jika ada pertanyaan atau issue:
 - Buka [Issues](https://github.com/username/movie-explorer/issues)
-- Email: email@example.com
+- Email: Oktaria_rahmadani@teknokrat.ac.id
 
 ---
-
-⭐ Jangan lupa beri star jika project ini membantu Anda!
-
-Made with ❤️ and ☕
-```
-
 ---
 
 ## 📝 Deskripsi Project (Untuk GitHub/Portfolio)
@@ -241,4 +233,5 @@ rating, genre, dan poster berkualitas tinggi. Dibangun menggunakan React
 Navigation untuk navigasi halaman dan Axios untuk HTTP requests.
 ```
 ---
+
 
