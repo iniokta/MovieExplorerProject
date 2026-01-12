@@ -8,15 +8,12 @@ const apiClient = axios.create({
   },
 });
 
-export const getPopularMovies = async (page = 1) => {
-  try {
-    const response = await apiClient.get('/movie/popular', {
-      params: { page },
-    });
-    return response.data;
-  } catch (error) {
-    throw error;
-  }
+const loadPopularMovies = () => {
+  setLoading(true);
+  getPopularMovies()
+    .then(res => setMovies(res.data.results))
+    .catch(err => console.log(err))
+    .finally(() => setLoading(false));
 };
 
 
