@@ -1,21 +1,51 @@
 import React, { useEffect, useState } from 'react';
-import { View, FlatList } from 'react-native';
-import { getPopularMovies } from '../services/api';
+import {
+  View,
+  FlatList,
+  TextInput,
+  StyleSheet,
+} from 'react-native';
+import { getPopularMovies, searchMovies } from '../services/api';
 import MovieCard from '../components/MovieCard';
 import { useNavigation } from '@react-navigation/native';
 
 const HomeScreen = () => {
   const [movies, setMovies] = useState([]);
+  const [query, setQuery] = useState('');
   const navigation = useNavigation();
 
   useEffect(() => {
+    loadPopularMovies();
+  }, []);
+
+  const loadPopularMovies = () => {
     getPopularMovies()
       .then(res => setMovies(res.data.results))
       .catch(err => console.log(err));
-  }, []);
+  };
+
+  const handleSearch = (text) => {
+    setQuery(text);
+
+    if (text.length > 2) {
+      searchMovies(text)
+        .then(res => setMovies(res.data.results))
+        .catch(err => console.log(err));
+    } else {
+      loadPopularMovies();
+    }
+  };
 
   return (
-    <View style={{ flex: 1, backgroundColor: '#000' }}>
+    <View style={styles.container}>
+      <TextInput
+        placeholder="Search movie..."
+        placeholderTextColor="#999"
+        style={styles.input}
+        value={query}
+        onChangeText={handleSearch}
+      />
+
       <FlatList
         data={movies}
         keyExtractor={item => item.id.toString()}
@@ -39,60 +69,11 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#000',
   },
-  header: {
+  input: {
     backgroundColor: '#1a1a1a',
-    padding: 15,
-    paddingTop: 40,
-  },
-  headerTitle: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#e50914',
-    marginBottom: 10,
-  },
-  searchContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  searchInput: {
-    flex: 1,
-    backgroundColor: '#2a2a2a',
     color: '#fff',
     padding: 10,
-    borderRadius: 5,
-    marginRight: 10,
-  },
-  searchButton: {
-    backgroundColor: '#e50914',
-    padding: 10,
-    borderRadius: 5,
-  },
-  searchButtonText: {
-    fontSize: 20,
-  },
-  list: {
-    padding: 15,
-  },
-  errorContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
-  },
-  errorText: {
-    color: '#fff',
-    fontSize: 16,
-    textAlign: 'center',
-    marginBottom: 20,
-  },
-  retryButton: {
-    backgroundColor: '#e50914',
-    padding: 15,
-    borderRadius: 5,
-  },
-  retryButtonText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold',
+    margin: 10,
+    borderRadius: 8,
   },
 });

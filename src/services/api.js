@@ -19,6 +19,7 @@ export const getPopularMovies = async (page = 1) => {
   }
 };
 
+
 export const getMovieDetails = async (movieId) => {
   try {
     const response = await apiClient.get(`/movie/${movieId}`);
