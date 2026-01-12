@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { API_KEY, BASE_URL } from '../config/constants';
+import LoadingSpinner from '../components/LoadingSpinner';
+
 
 const apiClient = axios.create({
   baseURL: BASE_URL,
