@@ -36,3 +36,17 @@ export const searchMovies = async (query) => {
     throw error;
   }
 };
+
+const handleSearch = (text) => {
+  setQuery(text);
+
+  if (text.length > 2) {
+    setLoading(true);
+    searchMovies(text)
+      .then(res => setMovies(res.data.results))
+      .catch(err => console.log(err))
+      .finally(() => setLoading(false));
+  } else {
+    loadPopularMovies();
+  }
+};
