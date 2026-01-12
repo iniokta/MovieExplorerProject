@@ -111,6 +111,7 @@ MovieExplorer/
 ```
 
 ## 🔌 API Endpoints yang Digunakan
+https://api.themoviedb.org/3/movie/popular?api_key=9bf19af30d73ab2c1b2640ae757c3317
 
 ### 1. Get Popular Movies
 ```
@@ -141,7 +142,6 @@ Dokumentasi lengkap: [TMDB API Docs](https://developer.themoviedb.org/reference/
 - **Text Secondary**: `#999999` (Abu-abu)
 - **Rating Color**: `#FFD700` (Emas)
 
-## 🐛 Troubleshooting
 
 ### Metro Bundler Error
 ```bash
@@ -233,5 +233,6 @@ rating, genre, dan poster berkualitas tinggi. Dibangun menggunakan React
 Navigation untuk navigasi halaman dan Axios untuk HTTP requests.
 ```
 ---
+
 
 
