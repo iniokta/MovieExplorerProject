@@ -10,9 +10,10 @@ import MovieCard from '../components/MovieCard';
 import { useNavigation } from '@react-navigation/native';
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
   const [movies, setMovies] = useState([]);
   const [query, setQuery] = useState('');
-  const navigation = useNavigation();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     loadPopularMovies();
